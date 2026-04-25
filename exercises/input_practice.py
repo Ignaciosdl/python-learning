@@ -2,7 +2,15 @@
 # 2- Necesito un imput "How old are you " y asignarlo a una variable age 
 # 3- Necesito un print con f string para crear texto flexible con variables
 
-name = input("What is your name? ")
-age = int(input("How old are you? "))
-print(f"Hello {name}, you are {age} years old")
-print(type(age))
+def name_age():
+    name = input("What is your name? ")
+    while True:
+        try:
+            age = int(input("How old are you? "))
+            print(f"Hello {name}, you are {age} years old")
+            break
+        except ValueError:
+            print("Please enter a valid number")
+
+name_age()
+
