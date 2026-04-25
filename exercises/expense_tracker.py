@@ -5,10 +5,16 @@ expenses = []
 def add_expense(name, category, amount):
     expenses.append({"name":name, "category":category, "amount":amount}) # add dictionary to list
 
-add_expense("bread","food",3) 
-add_expense("fuel","transport",20)
-add_expense("celphone","telecomunication",10)
-print(expenses)
+# fuction to collect expenses
+def collect_expenses():
+    expenses_to_add = int(input("How many expenses do you want to add?"))
+    for i in range(expenses_to_add):
+        name = input(f"What is the name of the expense number {i+1}?")
+        category = input(f"What is the category of the expense number {i+1}?")
+        amount = int(input(f"How much does the expense number {i+1} cost?"))
+        add_expense(name,category,amount)
+
+collect_expenses() 
 
 # function to calculate total all the expenses
 def total_expenses():
@@ -17,7 +23,7 @@ def total_expenses():
         expenses_amounts.append(expense["amount"]) # add amount to list
     return sum(expenses_amounts) # total sum of all expenses amounts 
     
-print(total_expenses())
+print(f"Total expenses: ${total_expenses()}")
 
 # function to see all the expenses
 def all_expenses():
@@ -37,3 +43,5 @@ def expenses_category():
     print(categories_total) # Shows in terminal the total of each category
 
 expenses_category()  
+
+
