@@ -5,14 +5,24 @@ expenses = []
 def add_expense(name, category, amount):
     expenses.append({"name":name, "category":category, "amount":amount}) # add dictionary to list
 
-# fuction to collect expenses
+# function to collect expenses
 def collect_expenses():
-    expenses_to_add = int(input("How many expenses do you want to add?"))
-    for i in range(expenses_to_add):
-        name = input(f"What is the name of the expense number {i+1}?")
-        category = input(f"What is the category of the expense number {i+1}?")
-        amount = int(input(f"How much does the expense number {i+1} cost?"))
-        add_expense(name,category,amount)
+    while True:
+            try:
+                expenses_to_add = int(input("How many expenses do you want to add?"))
+                for i in range(expenses_to_add):
+                    name = input(f"What is the name of the expense number {i+1}?")
+                    category = input(f"What is the category of the expense number {i+1}?")
+                    while True:
+                        try:
+                            amount = int(input(f"How much does the expense number {i+1} cost?"))
+                            break
+                        except ValueError:
+                            print("Please enter a valid number")
+                    add_expense(name,category,amount)
+                break
+            except ValueError:
+                print("Please enter a valid number")
 
 collect_expenses() 
 
