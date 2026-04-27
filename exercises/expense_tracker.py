@@ -44,7 +44,6 @@ def collect_expenses():
             except ValueError:
                 print("Please enter a valid number")
 
-collect_expenses() 
 
 # function to calculate total all the expenses
 def total_expenses():
@@ -53,14 +52,12 @@ def total_expenses():
         expenses_amounts.append(expense["amount"]) # add amount to list
     return sum(expenses_amounts) # total sum of all expenses amounts 
     
-print(f"Total expenses: ${total_expenses()}")
 
 # function to see all the expenses
 def all_expenses():
     for expense in expenses:
         print(f"{expense["name"]}: ${expense["amount"]}") # Shows for each expense it amount
 
-all_expenses()
 
 # expenses grouped by category function
 def expenses_category():
@@ -72,7 +69,32 @@ def expenses_category():
             categories_total[expense["category"]] = categories_total[expense["category"]] + expense["amount"] # Sum the new amount to the existing amount of that category
     print(categories_total) # Shows in terminal the total of each category
 
-expenses_category()  
+# menu input
+def menu_input():
+    while True:
+        try:
+            option = int(input(f"""
+            === EXPENSE TRACKER ===
+            Please enter one of the following numbers:
+            1. Add expenses
+            2. View all expenses
+            3. View total
+            4. View by category
+            5. Exit"""))
+            if option == 1:
+                collect_expenses()
+            elif option == 2:
+                all_expenses()
+            elif option == 3:
+                print(f"Total expenses: ${total_expenses()}") 
+            elif option == 4:
+                expenses_category()
+            elif option == 5:
+                save_expenses()
+                break
+            else:
+                print("Please enter a valid number from 1 to 5")
+        except ValueError:
+            print("Please enter a valid number from 1 to 5")
 
-
-save_expenses()
+menu_input()               
