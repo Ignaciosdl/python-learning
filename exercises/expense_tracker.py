@@ -1,5 +1,25 @@
+import json # import json library to work with json files
+from pathlib import Path # Import path from library pathlib
+
+# load saved expenses at startup
+def load_expenses():    
+    file_path = Path("expenses.json")
+    if file_path.is_file(): # ¿Does this file exists?
+        with open(file_path, "r") as file: # open expenses.json in read mode  
+            expenses = json.load(file) # open expenses.json in read mode and load data into expenses variable
+    else:
+        expenses = []
+    return expenses
+
 # list to store all expenses
-expenses = [] 
+expenses = load_expenses() 
+
+# save expenses at completion
+def save_expenses():
+    file_path = Path("expenses.json")
+    with open(file_path, "w") as file:  # "w" = write, creates file if not exists
+        json.dump(expenses, file)  # convert expenses list to JSON and write to file
+
 
 # function to add dictionaries to list
 def add_expense(name, category, amount):
@@ -55,3 +75,4 @@ def expenses_category():
 expenses_category()  
 
 
+save_expenses()

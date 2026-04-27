@@ -8,11 +8,11 @@ expenses = [
 ]
 
 # open/create expenses.json in write mode and save expenses list
-with open("expenses.json", "w") as file: # "w" = write, creates file if not exists
+with open("practice_expenses.json", "w") as file: # "w" = write, creates file if not exists
     json.dump(expenses, file) # convert expenses list to JSON and write to file
 
 # open expenses.json in read mode and load data into expenses variable   
-with open("expenses.json", "r") as file: # "r" = read
+with open("practice_expenses.json", "r") as file: # "r" = read
     expenses = json.load(file) # read JSON from file and convert to Python list
 
 # print loaded data to verify it worked   
