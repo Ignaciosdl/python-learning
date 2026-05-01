@@ -1,3 +1,4 @@
 .DS_Store
 expenses.json
 practice_expenses.json
+__pycache__/
