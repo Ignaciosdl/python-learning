@@ -14,7 +14,7 @@ def search_contact(contacts, name):
             print(f"Name: {contact["name"]}, Phone: {contact["phone"]}, Email: {contact["email"]}") 
             found = True # change the value of the variable to describe that the name was found
             break # once the contact was founded by the name we stop the loop
-    if found ==False:
+    if found == False:
         print(f"{name} is not in the list of contact") # if the contact was not found once the loop finished whe show this
 
 # function to delete a dictionaries from a list
@@ -37,4 +37,11 @@ def delete_contact(contacts,name):
                         print("Please enter y or n")
     if found == False: # if the contact is not founded after the complete iteration
         print(f"{name} is not in the list of contact") # if the contact was not found once the loop finished whe show this
-        
+
+def view_contacts(contacts):
+    if len(contacts) != 0: # if the list is not empty
+        print(f"The list of contacts is:") # print the title
+        for contact in contacts: # iterate the list contacts and for each of the elements contact 
+            print(f"Name: {contact["name"]}, Phone: {contact["phone"]}, Email: {contact["email"]}") # print the data of each element
+    else: # if the list is empty (contacts == 0)
+        print(f"The list of contacts is empty") 
