@@ -1,9 +1,5 @@
-from storage import load_contacts, save_contacts # import the the functions from storage.py module
-
-contacts = load_contacts() # calling the function load_contacts and add it to contacts variable
-
 # function to add dictionaries to list
-def add_contact(name,phone,email):
+def add_contact(contacts, name, phone, email):
     contacts.append({"name":name, "phone":phone, "email":email}) # add each contact to contacts list
 
 # function to search contact by name
@@ -18,7 +14,7 @@ def search_contact(contacts, name):
         print(f"{name} is not in the list of contact") # if the contact was not found once the loop finished whe show this
 
 # function to delete a dictionaries from a list
-def delete_contact(contacts,name):
+def delete_contact(contacts, name):
     found = False # create variable to describe that the name was not found yet
     for contact in contacts: # iterating the list contacts
         if contact["name"] == name: # if the name is in the list
