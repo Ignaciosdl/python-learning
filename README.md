@@ -27,3 +27,19 @@ A terminal app to manage and track personal expenses.
 ```bash
 python3 exercises/expense_tracker.py
 ```
+
+### 📒 Contact Book
+A terminal app to manage contacts details.
+
+**Features:**
+- Add contacts with name, phone and email
+- Search contacts by name
+- View the list of contacts
+- Delete contacts by name
+- Data persists between sessions (JSON)
+- Work with modules
+
+**How to run:**
+```bash
+python3 contact_book/main.py
+```
