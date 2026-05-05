@@ -43,3 +43,20 @@ A terminal app to manage contacts details.
 ```bash
 python3 contact_book/main.py
 ```
+
+### 💸 Budget Tracker
+A terminal app to manage and track monthly budget.
+
+**Features:**
+- Set budget
+- Add expenses with name, category and amount
+- View total of expenses
+- View available budget
+- View total of expenses grouped by category
+- Alert when some percentage of budget has been spent
+- Data persists between sessions (JSON)
+
+**How to run:**
+```bash
+python3 budget_traker/main.py
+```
