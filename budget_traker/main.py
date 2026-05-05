@@ -1,4 +1,4 @@
-from budget import set_budget, add_expense, available_budget
+from budget import set_budget, add_expense, available_budget, category_expenses
 
 budget = 0
 budget = set_budget(budget, 1000)
@@ -8,3 +8,4 @@ add_expense(expenses,"banana","food",5)
 add_expense(expenses,"fuel","transport",15)
 print(expenses)
 print(available_budget(budget,expenses))
+print(category_expenses(expenses))
