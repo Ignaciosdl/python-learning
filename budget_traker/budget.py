@@ -4,7 +4,7 @@ def set_budget(budget,amount): # function receives two parameters budget and amo
     return budget # return budget with the new amount value
 
 # function to add dictionaries with name, category and amout to the expenses list
-def add_expense(expenses, name, category, amount): 
+def add_expense(expenses,name,category,amount): 
     expenses.append({"name":name, "category":category, "amount":amount}) # adding dcitionaries to list with append method
 
 # function to calculate the total amount of expenses    
@@ -27,4 +27,12 @@ def category_expenses(expenses):
         else: # if the category that we are looking for is part of the categories_total dictionarie then:
             categories_total[expense["category"]] = categories_total[expense["category"]] + expense["category"] # we add the amount to the value of the existing key
     return categories_total
+
+# function to print an alert once at list the 80% of the budget is reached
+def budget_alert(budget,expenses):  # receives two parameters budget and expenses
+    total_expenses = get_total_expenses(expenses) # call the function get_total_expenses to calculate the total amount of expenses
+    budget_percentage = total_expenses / budget # calulate the percentage of expenses over the budget
+    if budget_percentage >= 0.8: # once the expenses are equal o grater than the budget then:
+        print(f"Budget alert: The {budget_percentage*100:.0f}% of the budget have been reached") # print the alert
+    
 
