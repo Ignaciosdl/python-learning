@@ -5,7 +5,7 @@ def set_budget(amount): # function receives two parameters budget and amount
     return amount # if amount is positive is valid
 
 # function to add dictionaries with name, category and amout to the expenses list
-def add_expense(expenses,name,category,amount): 
+def add_expense(expenses, name, category, amount): 
     expenses.append({"name":name, "category":category, "amount":amount}) # adding dcitionaries to list with append method
 
 # function to calculate the total amount of expenses    
@@ -14,7 +14,7 @@ def get_total_expenses(expenses): # receives the expenses list a parameter
     return total_expenses # return the total amount of expenses
 
 # function to calculate the availabel budget    
-def available_budget(budget,expenses): # receives two parameters budget and expenses
+def available_budget(budget, expenses): # receives two parameters budget and expenses
     total_expenses =  get_total_expenses(expenses) # call the function get_total_expenses to calculate the total amount of expenses
     available_budget = budget - total_expenses # rest the total of expenses from the mensual budget
     return available_budget # return the available budget
@@ -30,7 +30,7 @@ def category_expenses(expenses):
     return categories_total
 
 # function to print an alert once at list the 80% of the budget is reached
-def budget_alert(budget,expenses):  # receives two parameters budget and expenses
+def budget_alert(budget, expenses):  # receives two parameters budget and expenses
     total_expenses = get_total_expenses(expenses) # call the function get_total_expenses to calculate the total amount of expenses
     budget_percentage = total_expenses / budget # calulate the percentage of expenses over the budget
     if budget_percentage >= 0.8: # once the expenses are equal o grater than the budget then:
