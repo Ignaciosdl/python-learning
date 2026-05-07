@@ -31,6 +31,13 @@ class ContactBook: # manages a collection of Contact objects
                 break # stop iterating once found
         if found == False: # if loop finished without finding the contact
             print(f"{name} is not in the list of contacts") # notify user
+            
+    def view_contacts(self): # display all contacts in the list
+        if len(self.contacts) != 0: # check if list is not empty
+            for contact in self.contacts: # iterate through all contacts
+                print(f"{contact}") # display each contact using __str__
+        else:
+            print("The list of contacts is empty") # notify user if no contacts exist
                     
 book = ContactBook() # instantiate ContactBook object
 
@@ -41,3 +48,4 @@ for contact in book.contacts:
 
 book.search_contact("Ignacio")
 book.search_contact("Maria")
+book.view_contacts()
